@@ -19,8 +19,8 @@ def save_text_to_file(file_path, lines):
 
 # lines_to_save = ['This is line 1.', 'This is line 2.', 'And this is line 3.']
 
-# file_path = './dump_SES.sql'
-file_path = './pruebabuscar.sql'
+file_path = './dump_SES.sql'
+# file_path = './pruebabuscar.sql'
 
 # search_text = 'pku-consultor@aig.gob.pa'
 search_text = 'PRIMARY'
