@@ -1,18 +1,22 @@
 
 def search_text_in_file(file_path, search_text):
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding="utf-8") as file:
         lines = file.readlines()
+    found_lines = []
+    for line in lines:
+        if search_text in line:
+            found_lines.append(line)
+            break
+    # found_lines = [line.strip() for line in lines if search_text in line]
 
-    found_lines = [line.strip() for line in lines if search_text in line]
-
-    # return found_lines
-    return lines
+    return found_lines
+    # return lines
 
 
 
 
 def save_text_to_file(file_path, lines):
-    with open(file_path, 'w') as file:
+    with open(file_path, 'w', encoding="utf-8") as file:
         for line in lines:
             file.write(line + '\n')
 
@@ -24,7 +28,7 @@ file_path = './dump_SES.sql'
 # file_path = './pruebabuscar.sql'
 
 # search_text = 'pku-consultor@aig.gob.pa'
-search_text = 'PRIMARY'
+search_text = 'a'
 found_lines = search_text_in_file(file_path, search_text)
 
 for line in found_lines:
