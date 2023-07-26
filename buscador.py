@@ -44,8 +44,8 @@ def save_text_to_file(file_path, lines):
 file_path = './dump_SES.sql'
 # file_path = './pruebabuscar.sql'
 
-# search_text = 'pku-consultor@aig.gob.pa'
-search_text = 'Adjuntos'
+search_text = 'pku-consultor@aig.gob.pa'
+# search_text = 'Adjuntos'
 found_lines = search_text_in_file(file_path, search_text)
 
 for line in found_lines:
