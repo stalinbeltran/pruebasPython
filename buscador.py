@@ -5,7 +5,8 @@ def search_text_in_file(file_path, search_text):
 
     found_lines = [line.strip() for line in lines if search_text in line]
 
-    return found_lines
+    # return found_lines
+    return lines
 
 
 
@@ -28,6 +29,7 @@ found_lines = search_text_in_file(file_path, search_text)
 
 for line in found_lines:
     print(line)
+    break
 
 # exit(0)
 
