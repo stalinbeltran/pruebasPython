@@ -9,29 +9,33 @@ def search_text_in_file(file_path, search_text):
 
     return found_lines
 
-def search_different_text_in_file(file_path, len):
+def search_different_text_in_file(file_path, longitud):
     with open(file_path, 'r', encoding=ENCODING) as file:
         lines = file.readlines()
     primeralinea = lines[0]
-    string_before = primeralinea[0:len]
+    string_before = primeralinea[0:longitud]
     found_lines = []
     found_lines.append(primeralinea)
 
     for line in lines:
         if string_before in line:
             continue
-        string_before = line[0:len]
-        if len(line)==0:
-            print('linea en blanco')
+        string_before = line[0:longitud]
+        # if len(line)==0:
+        #     print('linea en blanco')
         found_lines.append(line)
 
+    size = len(found_lines)
+    max = 10 if size > 10 else size
+    for i in range(0,max):
+        print('---------' + str(i) + ': ' + found_lines[i])
     return found_lines
 
 
 def save_text_to_file(file_path, lines):
     with open(file_path, 'w', encoding=ENCODING) as file:
         for line in lines:
-            file.write(line + '\n')
+            file.write(line + '\r\n')
 
 
 
