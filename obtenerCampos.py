@@ -11,24 +11,14 @@ def camposValor(lineas):
 
     # field_names = re.findall(r'\[([^\]]+)\]', sql_sentence)
     # Extract field names using regex
-    field_values = re.findall(r"INSERT.\[dbo\]\.\[Adjuntos\] \((.*?)\)", sql_sentence, re.DOTALL)
-    print(field_values)
+    field_names = re.findall(r"INSERT.\[dbo\]\.\[Adjuntos\] \((.*?)\)", sql_sentence, re.DOTALL)
+    print(field_names)
+    if len(field_names) == 0: exit(0)
+    fields = field_names[0]
+    print(fields)
 
 
 camposValor(None)
 
 exit(0)
 
-# Extract field values using regex
-field_values = re.findall(r"VALUES \((.*?)\)", sql_sentence, re.DOTALL)
-
-# Convert the field values to a list of Python objects (integers, strings, datetime)
-field_values = eval('[' + field_values[0] + ']')
-
-print(field_names)
-# Create a dictionary to hold the field names and their corresponding values
-field_dict = dict(zip(field_names, field_values))
-
-# Print the field names and their values
-for field_name, field_value in field_dict.items():
-    print(f"{field_name}: {field_value}")
