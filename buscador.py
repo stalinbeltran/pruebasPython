@@ -21,21 +21,19 @@ def search_different_text_in_file(file_path, longitud):
         if string_before in line:
             continue
         string_before = line[0:longitud]
-        # if len(line)==0:
-        #     print('linea en blanco')
         found_lines.append(line)
 
     size = len(found_lines)
     max = 10 if size > 10 else size
-    for i in range(0,max):
-        print('---------' + str(i) + ': ' + found_lines[i])
+    # for i in range(0,max):
+    #     print('---------' + str(i) + ': ' + found_lines[i])
     return found_lines
 
 
 def save_text_to_file(file_path, lines):
     with open(file_path, 'w', encoding=ENCODING) as file:
         for line in lines:
-            file.write(line + '\r\n')
+            file.write(line + u"\r")
 
 
 
