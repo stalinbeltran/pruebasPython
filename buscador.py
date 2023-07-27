@@ -2,12 +2,7 @@
 def search_text_in_file(file_path, search_text):
     with open(file_path, 'r', encoding='utf-16le') as file:
         lines = file.readlines()
-    found_lines = []
-    for line in lines:
-        if search_text in line:
-            found_lines.append(line)
-            break
-    # found_lines = [line.strip() for line in lines if search_text in line]
+    found_lines = [line.strip() for line in lines if search_text in line]
 
     return found_lines
 
