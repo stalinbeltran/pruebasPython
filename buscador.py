@@ -54,6 +54,8 @@ save_text_to_file(file_path_to_save_different, found_different_lines)
 found_lines_insert = search_text_in_file(file_path_to_save_different, "INSERT")
 file_path_to_save_insert = './dump_SES_insert.sql'
 save_text_to_file(file_path_to_save_insert, found_lines_insert)
-
+found_different_lines_insert = search_different_text_in_file(file_path_to_save_insert, 36)
+file_path_to_save_insert_diferentes = './dump_SES_insert_diferentes.sql'
+save_text_to_file(file_path_to_save_insert_diferentes, found_different_lines_insert)
 
 
