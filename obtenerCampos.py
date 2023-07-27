@@ -14,6 +14,7 @@ def getCampos(sql_sentence):
     print(fields_string)
     fields = re.findall(r"\[(.*?)\]", fields_string, re.DOTALL)
     print(fields)
+    return fields
 
 #obtener valores de la sentencia SQL:
 def getValores(sql_sentence):
@@ -25,10 +26,18 @@ def getValores(sql_sentence):
     print(fields_string)
     fields = fields_string.split(',')
     for field in fields:
+        field = field.strip()
         print(field)
+    return fields
 
 sql_sentence = "INSERT [dbo].[Adjuntos] ([id], [Solicitudes_id], [nombreArchivo], [envioID], [usuario], [fecha]) VALUES (9978, 1848, 'Observaciones_SES_1848.pdf', 'p1flp5sger16t11mtef3hovj1vr67', 'pku-consultor@aig.gob.pa', CAST('2021-11-30T14:42:58.000' AS DateTime))"
 
-getValores(sql_sentence)
+campos = getCampos(sql_sentence)
+valores = getValores(sql_sentence)
 
+if len(campos) != len(valores): exit(0)
+print('Tenemos pares campo/valor')
+# Create a dictionary to hold the field names and their corresponding values
+field_dict = dict(zip(campos, valores))
 
+print(field_dict)
