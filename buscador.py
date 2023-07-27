@@ -36,6 +36,11 @@ def save_text_to_file(file_path, lines):
             file.write(line + u"\r")
 
 
+# #crear arreglos de tabla, y pares de campo/valor para determinar tabla y campos que contienen el texto buscado
+# def camposValor(lineas)
+
+
+
 
 #Proceso:
 file_path = './dump_SES.sql'
