@@ -1,6 +1,7 @@
 
 
 import re
+import obtenerTabla
 
 
 
@@ -47,3 +48,5 @@ print('Tenemos pares campo/valor')
 field_dict = dict(zip(campos, valores))
 
 print(field_dict)
+
+
