@@ -39,14 +39,28 @@ valores = getValores(sql_sentence)
 if len(campos) != len(valores): exit(0)
 
 size = len(valores)
+atributos = []
 for i in range(0, size):
     valores[i] = valores[i].strip()
     valores[i] = valores[i].strip("'")
+    atributo = {}
+    atributo["campo"] = campos[i]
+    atributo["valor"] = valores[i]
+    atributos.append(atributo)
 
 print('Tenemos pares campo/valor')
 # Create a dictionary to hold the field names and their corresponding values
-field_dict = dict(zip(campos, valores))
+# field_dict = dict(zip(campos, valores))
 
-print(field_dict)
+
+
+# print(field_dict)
+
+tabla = obtenerTabla.obtenerTabla(sql_sentence)
+insert = {"tabla": tabla}
+insert["campos"] = atributos
+
+print('----------------------')
+print(insert)
 
 
