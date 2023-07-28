@@ -7,10 +7,11 @@ import obtenerTabla
 
 #obtener campos de la sentencia SQL:
 def getCampos(sql_sentence):
+    print('-----------getCampos')
     # Extract field names using regex
-    field_names = re.findall(r"INSERT.\[dbo\]\.\[Adjuntos\] \((.*?)\)", sql_sentence, re.DOTALL)
+    field_names = re.findall(r"INSERT.\[dbo\]\.\[Solicitudes\] \((.*?)\)", sql_sentence, re.DOTALL)
     print(field_names)
-    if len(field_names) == 0: exit(0)
+    if len(field_names) == 0: return None
     fields_string = field_names[0]
     print(fields_string)
     fields = re.findall(r"\[(.*?)\]", fields_string, re.DOTALL)
@@ -19,6 +20,7 @@ def getCampos(sql_sentence):
 
 #obtener valores de la sentencia SQL:
 def getValores(sql_sentence):
+    print('-----------getValores')
     # Extract field VALUES using regex
     field_names = re.findall(r"VALUES.\((.*?)\)", sql_sentence, re.DOTALL)
     print(field_names)
