@@ -5,7 +5,7 @@ import obtenerTabla
 
 
 
-#crear arreglos de tabla, y pares de campo/valor para determinar tabla y campos que contienen el texto buscado
+#obtener campos de la sentencia SQL:
 def getCampos(sql_sentence):
     # Extract field names using regex
     field_names = re.findall(r"INSERT.\[dbo\]\.\[Adjuntos\] \((.*?)\)", sql_sentence, re.DOTALL)
@@ -49,12 +49,6 @@ for i in range(0, size):
     atributos.append(atributo)
 
 print('Tenemos pares campo/valor')
-# Create a dictionary to hold the field names and their corresponding values
-# field_dict = dict(zip(campos, valores))
-
-
-
-# print(field_dict)
 
 tabla = obtenerTabla.obtenerTabla(sql_sentence)
 insert = {"tabla": tabla}
@@ -63,4 +57,11 @@ insert["campos"] = atributos
 print('----------------------')
 print(insert)
 
+print('----------------------')
+
+search_text = 'pku-consultor@aig.gob.pa'
+
+for campo in insert["campos"]:
+    if campo["valor"] == search_text:
+        print(campo)
 
