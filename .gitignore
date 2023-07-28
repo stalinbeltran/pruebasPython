@@ -4,3 +4,4 @@ dump_SES_selectos_diferentes.sql
 dump_SES_insert.sql
 dump_SES_insert_diferentes.sql
 *.pyc
+dumpSES_SEC.sql
