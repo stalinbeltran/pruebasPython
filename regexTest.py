@@ -1,6 +1,6 @@
 import re
 
-sentence = "This [is] (some (nested) text) que qir between (external) parentheses."
+sentence = "This [is] (some (nested) text) que qir between quien (external) parentheses."
 
 # Extract text between the most external parentheses
 # pattern = r'(?<!\(.*)\((?!.*\))(.+?)(?<!\().*?\)(?!\))'
