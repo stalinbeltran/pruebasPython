@@ -22,7 +22,7 @@ def getCampos(sql_sentence):
 def getValores(sql_sentence):
     print('-----------getValores')
     # Extract field VALUES using regex
-    field_names = re.findall(r"VALUES.\((.*?)\)", sql_sentence, re.DOTALL)
+    field_names = re.findall(r"VALUES (\((?:.)+\))", sql_sentence, re.DOTALL)
     print(field_names)
     if len(field_names) == 0: exit(0)
     fields_string = field_names[0]

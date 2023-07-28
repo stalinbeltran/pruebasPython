@@ -6,8 +6,10 @@ sql_sentence = "INSERT [dbo].[Solicitudes] ([id], [tipo_id], [monto], [descripci
 campos = obtenerCampos.getCampos(sql_sentence)
 valores = obtenerCampos.getValores(sql_sentence)
 
-if len(campos) != len(valores):
-    print('No coinciden logitudes de arreglos campos y valores')
+ncampos = len(campos)
+nvalores = len(valores)
+if ncampos != nvalores:
+    print('No coinciden logitudes de arreglos campos y valores:' + str(ncampos) + '-' + str(nvalores))
     exit(0)
 
 size = len(valores)
