@@ -44,7 +44,7 @@ def save_text_to_file(file_path, lines):
 
 #Proceso:
 # file_path = './dump_SES.sql'        #para DB SES
-file_path = './dumpSES_SEC.sql'        #para DB SES_SEC
+file_path = './dump_SES_SEC.sql'        #para DB SES_SEC
 
 #buscamos lineas de texto en el archivo Dump de base de datos
 search_text = 'pku-consultor@aig.gob.pa'
