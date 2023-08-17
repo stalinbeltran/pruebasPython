@@ -43,18 +43,19 @@ def save_text_to_file(file_path, lines):
 
 
 #Proceso:
-# file_path = './dump_SES.sql'        #para DB SES
-# file_path = './dump_SES_SEC.sql'        #para DB SES_SEC
-# file_path = './dump_jobsSES.sql'        #para DB SES_SEC
-# file_path = './SES.sql'        #para DB SES_SEC
-# file_path = './jobsSES.sql'        #para DB SES_SEC
-file_path = './SES_SECt.sql'        #para DB SES_SEC
+# file_path = './dump_SES.sql'        
+# file_path = './dump_SES_SEC.sql'   
+# file_path = './dump_jobsSES.sql'   
+# file_path = './SES.sql'   
+# file_path = './jobsSES.sql'   
+# file_path = './SES_SECt.sql'   
+file_path = './SESHistorico.sql'   
 
 
 #buscamos lineas de texto en el archivo Dump de base de datos
 # search_text = 'pku-consultor@aig.gob.pa'
-search_text = 'prodriguez@aig.gob.pa'
-# search_text = 'sbeltran-consultor@aig.gob.pa'
+# search_text = 'prodriguez@aig.gob.pa'
+search_text = 'sbeltran-consultor@aig.gob.pa'
 found_lines = search_text_in_file(file_path, search_text)
 
 # for line in found_lines:
