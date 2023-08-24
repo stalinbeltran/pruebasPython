@@ -37,7 +37,7 @@ with open(scriptsfile, "w") as fscripts:
             if count % chunk_size == 0:
                 write_chunk(count // chunk_size, lines, fscripts)
                 lines = []
-                break
+                # break
         # write remainder
         if len(lines) > 0:
             write_chunk((count // chunk_size) + 1, lines, fscripts)
