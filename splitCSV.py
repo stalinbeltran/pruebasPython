@@ -1,17 +1,17 @@
 chunk_size = 40000
+DB_NAME = "bd_transacciones_vale"
 csvfile = "C:\\Users\\sbeltran-consultor\\Downloads\\cedulad.csv"
 # csvfile = "C:\\Users\\sbeltran-consultor\\Downloads\\csvprueba.csv"
 
 
 def writeScript(fscripts, filename):
     script = """
-TRUNCATE TABLE `transaccionesvale`.`transacciones`;
 LOAD DATA LOCAL INFILE '""" + filename + """' 
-INTO TABLE `transaccionesvale`.`transacciones` 
+INTO TABLE `""" + DB_NAME + """`.`transacciones` 
 CHARACTER SET utf8 FIELDS TERMINATED BY ',' 
 OPTIONALLY ENCLOSED BY '"'  ESCAPED BY '\\\\' 
 LINES TERMINATED BY '\\n' (`TransactionId`, `TransactionFechaCreacion`, `TranctionCreatoruserid`, `TranctionLastModifierUserid`, `TransactionIsDeleted`, `TransactionIsDeletedNew`, `TransactionDeleterUserId`, `TransactionDeletionTime`, `TransactionTenantId`, `TransactionAuthorizationNumber`, `TransactionCashierId`, `TransactionIdenfierType`, `TransactionIdenfier`, `TransactionAmount`, `TransactionBalance`, `TransactionResponsecode`, `TransactionSetledStatus`, `TransactionBranchId`, `TransactionRequestDate`, `TransactionResponseDate`, `TransactionTrackingId`, `TransactionReferenceId`, `TransactionType`, `TransactionProgramId`, `TransactionIsVoided`, `TransactionProcessType`, `UserNombreComnercio`, `TenantId`, `BranchId`, `BranchNombreSucursal`, `BranchDireccion`, `ProgramPrograma`, `UserName`, `UserSurName`);
-SHOW WARNINGS;
+
 """
     fscripts.write(script)
 
@@ -26,7 +26,11 @@ def write_chunk(part, lines, fscripts):
 
 
 scriptsfile = './csvgenerados/_scriptsImportar.sql'
+truncate = "TRUNCATE TABLE `" + DB_NAME + "`.`transacciones`;"
+
+
 with open(scriptsfile, "w") as fscripts:
+    fscripts.write(truncate)
     with open(csvfile, "rb") as f:
         count = 0
         header = f.readline()
