@@ -4,6 +4,22 @@ csvfile = "C:\\Users\\sbeltran-consultor\\Downloads\\cedulad.csv"
 # csvfile = "C:\\Users\\sbeltran-consultor\\Downloads\\csvprueba.csv"
 
 
+import mysql.connector
+
+
+mydb = mysql.connector.connect(
+  host="10.253.178.3",
+  user="sbeltran",
+  password="sbeltran"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE DATABASE mydatabase")
+exit(0)
+
+
+
 def writeScript(fscripts, filename):
     script = """
 LOAD DATA LOCAL INFILE '""" + filename + """' 
