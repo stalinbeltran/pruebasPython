@@ -10,13 +10,13 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="10.253.178.3",
   user="sbeltran",
-  password="sbeltran"
+  password="sbeltran",
+  database= DB_NAME
 )
 
 mycursor = mydb.cursor()
+# mycursor.execute("USE " + DB_NAME + ";")
 
-mycursor.execute("CREATE DATABASE mydatabase")
-exit(0)
 
 
 
@@ -29,7 +29,9 @@ OPTIONALLY ENCLOSED BY '"'  ESCAPED BY '\\\\'
 LINES TERMINATED BY '\\n' (`TransactionId`, `TransactionFechaCreacion`, `TranctionCreatoruserid`, `TranctionLastModifierUserid`, `TransactionIsDeleted`, `TransactionIsDeletedNew`, `TransactionDeleterUserId`, `TransactionDeletionTime`, `TransactionTenantId`, `TransactionAuthorizationNumber`, `TransactionCashierId`, `TransactionIdenfierType`, `TransactionIdenfier`, `TransactionAmount`, `TransactionBalance`, `TransactionResponsecode`, `TransactionSetledStatus`, `TransactionBranchId`, `TransactionRequestDate`, `TransactionResponseDate`, `TransactionTrackingId`, `TransactionReferenceId`, `TransactionType`, `TransactionProgramId`, `TransactionIsVoided`, `TransactionProcessType`, `UserNombreComnercio`, `TenantId`, `BranchId`, `BranchNombreSucursal`, `BranchDireccion`, `ProgramPrograma`, `UserName`, `UserSurName`);
 
 """
-    fscripts.write(script)
+    fscripts.write(script)    
+
+
 
 def write_chunk(part, lines, fscripts):
     filename = './csvgenerados/data_part_'+ str(part) +'.csv'
