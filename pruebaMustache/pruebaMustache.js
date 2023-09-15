@@ -11,14 +11,10 @@ function sumar(a, b){
     const json1 = fs.readFileSync('data1.json', 'utf8')
     var viewjson = JSON.parse(json1)
 
-
-    const formTemplate = fs.readFileSync('form.mustache', 'utf8')
     var partial = {}
-    partial.form = formTemplate
 
-    
-    const formTemplate1 = fs.readFileSync('funcionesRelacion.mustache', 'utf8')
-    partial.funcionesRelacion = formTemplate1
+    const funcionesRelacion = fs.readFileSync('funcionesRelacion.mustache', 'utf8')
+    partial.funcionesRelacion = funcionesRelacion
 
     console.log(viewjson)
 
