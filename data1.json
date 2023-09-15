@@ -1,0 +1,21 @@
+{
+"dataplana":[
+    {"name":"Stalin", "apellido": "Beltran"},
+    {"name":"Stalin2", "apellido": "Beltran"}
+],
+"plantillas": [{"valor": "contenido de form 77"}],
+"input":"checkbox",
+"text": "hola todo mundo",
+"NombreClase": "Usuario",
+"NombreTabla": "usuario",
+"fillable":[
+    {"campo":"usuario"},
+    {"campo":"password"},
+    {"campo":"email"},
+    {"campo":"nombre"},
+    {"campo":"activedirectory"}
+],
+"nombreCampoRelacionado": "grupos",
+"funcionRelacionEloquent": "belongsToMany",
+"ClaseModelo": "Grupo"
+}
