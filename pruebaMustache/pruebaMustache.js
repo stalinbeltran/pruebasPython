@@ -1,32 +1,11 @@
 
-
-
 const mustache = require('Mustache');
-
-var view = {
-    title: "Joe",
-    calc: function () {
-      return 2 + 4;
-    }
-  };
-  
-  var output = mustache.render("{{title}} spends {{calc}}", view);
-console.log(output)
 
 
 var fs = require('fs');
 function sumar(a, b){
     return a + b
 }
-
-var view1 = {
-    name: "Joe",
-    calc: function () {
-      //return 2 + 4;
-      return sumar(3,7)
-    }
-  };
-
 
   try {
     const json1 = fs.readFileSync('data1.json', 'utf8')
@@ -42,17 +21,13 @@ var view1 = {
     partial.funcionesRelacion = formTemplate1
 
     console.log(viewjson)
-    var json = {
-        "name": "de todo ",
-        "valor": "contenido de form"
-      }
+
     fs.readFile('template1.php', 'utf8', function(err, data) {
-        console.log(err)
+        if (err) console.log(err)
         var output = mustache.render(data, viewjson, partial);
         fs.writeFile('output.php', output, {options:'utf8'}, function(error){
 
         })
-        //console.log(output)
     });
   
   } catch (err) {
